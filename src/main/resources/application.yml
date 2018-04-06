@@ -1,0 +1,35 @@
+# yaml 文件的配置格式   多profiles 可以配置多个文档块来区分 不同环境切换不同的配置文件
+server:
+  port: 8081
+  path: /hello
+# 参考与之对应的实体bean  与测试类
+person:
+  lastName: 110@qq.com${random.uuid}
+  age: 18
+  boss: true
+  birthday: 2018/04/16
+  maps: {k1: v1,k2: v2}
+  lists: [lisi,zaoliu,wanwu]
+  dog:
+     name: ${person.lastName}_哈士奇
+     # ：后面是默认值
+     age: ${person.hello:1}18
+
+# 激活指定的文档配置块
+spring:
+  profiles:
+    active: dev
+
+# --- yaml 文件中可以使用 三个短横线 来讲一个yaml文档分成多份  默认加载文档第一个
+---
+# 开发环境
+server:
+  port: 8083
+spring:
+  profiles: dev
+---
+# 生产环境
+server:
+  port: 8090
+spring:
+  profiles: prod
