@@ -1,0 +1,9 @@
+----------------SpringBoot中注解-------------------------------------
+  @SpringBootApplication 来标注一个SpringBoot 主程序  说明这是一个SpringBoot 应用 该注解标注在某一类上，说明该类是SpringBoot的主配置类
+                           SpringBoot 就会运行该类的main方法来启动SpringBoot 应用
+                           	@Configuration:配置类上来标注这个注解；
+                           			配置类 <----->  配置文件；配置类也是容器中的一个组件；@Component
+                           @EnableAutoConfiguration：开启自动配置功能；
+                           		以前我们需要配置的东西，Spring Boot帮我们自动配置；@EnableAutoConfiguration告诉SpringBoot开启自动配置功能；这样自动配置才能生效；
+
+
