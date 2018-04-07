@@ -81,6 +81,23 @@ k:(空格)v：表示一对键值对（空格必须有）； key: value  value与
     pets: [cat,dog,pig]
 
 
+SpringBoot 加载配置文件的顺序
+
+–file:./config/
+
+–file:./
+
+–classpath:/config/          resource目录下的config 文件优先级高于该目录下的配置文件优先级
+
+–classpath:/
+
+优先级由高到底，高优先级的配置会覆盖低优先级的配置；
+
+SpringBoot会从这四个位置全部加载主配置文件；互补配置；
+
+
+
+
 
 
 
