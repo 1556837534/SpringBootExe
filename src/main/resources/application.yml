@@ -15,11 +15,19 @@ person:
      # ：后面是默认值
      age: ${person.hello:1}18
 
+#设置 springBoot的对那些文件的日志级别，默认是info级别
+
 # 激活指定的文档配置块
 spring:
   profiles:
     active: dev
-
+logging:
+  level:
+     com.study: trace
+  #file: springBoot.log #不指定路径当前项目下生成springboot日志文件，可以写绝对路径
+ # path: /opt/log   #指定日志输出到哪个目录下，会使用SpringBoot默认的文件名spring。log 一般使用这个而不是用file  /表示当前磁盘的根目录
+  #pattern:
+   # console: %d{yyyy-MM-dd HH:mm:ss:SSS} [%thead] %-5level %logger{50} -%msg%n  #控制台输出格式 -5表示左对齐 logger{50} 全类目50个字符
 # --- yaml 文件中可以使用 三个短横线 来讲一个yaml文档分成多份  默认加载文档第一个
 ---
 # 开发环境
@@ -28,7 +36,7 @@ server:
 spring:
   profiles: dev
   # 开启SpringBoot的 debug模式
-debug: true
+#debug: true
 ---
 # 生产环境
 server:
